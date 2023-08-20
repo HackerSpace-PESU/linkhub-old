@@ -59,7 +59,7 @@ with open('api/index.py', 'w') as finale:
     finale.write(main_code)
 
 with open('api/static/styles.css', 'w') as fin:
-    st.write(styles)
+    fin.write(styles)
 
 # Commit and push changes
 repo.git.add(all=True)
