@@ -58,6 +58,9 @@ with open('data/styles.css', 'r') as st:
 
 # Switch to the 'website' branch
 repo = git.Repo(os.getcwd())
+
+if 'website' not in [branch.name for branch in repo.branches]:
+    repo.git.checkout(b='website')
 repo.git.checkout('website')
 
 # Write processed data to index.py
