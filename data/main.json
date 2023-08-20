@@ -1,0 +1,32 @@
+{
+    "project_name": "Sample",
+    
+    "page_content": {
+        "main_heading": "",
+        "content": "",
+        "styles": {
+            "stylesheets": [
+                "", 
+                ""
+            ],
+            "body_classes": "",
+            "heading_classes": "",
+            "content_classes": "",
+            "subhead_classes": "",
+            "button_classes": ""
+        }
+    },
+
+    "pages": [
+        {
+            "endpoint": "/",
+            "title": "",
+            "file": "index.json"
+        },
+        {
+            "endpoint": "/newpage",
+            "title": "",
+            "file": "newpage.json"
+        }
+    ]
+}

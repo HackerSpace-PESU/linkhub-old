@@ -1,0 +1,17 @@
+{
+    "components": [
+        {
+            "type": "heading",
+            "label": "Heading"
+        },
+
+        {
+            "type": "button",
+            "label": "Button with Endpoint",
+            "properties": {
+                "link": "someotherlink.com",
+                "endpoint": "/random"
+            }
+        }
+    ]
+}
