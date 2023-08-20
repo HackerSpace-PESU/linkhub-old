@@ -12,6 +12,7 @@ def index():
     with open('data/index.json', 'r') as data:
         components = json.loads(data.read())['components']
     return render_template('main.html', 
+    title="",
     project_name="Sample",
     main_heading="",
     content="",
@@ -20,6 +21,7 @@ def index():
     heading_classes="",
     content_classes="",
     subhead_classes="",
+    button_classes="",
     components=components
     )
 
@@ -28,6 +30,7 @@ def newpage():
     with open('data/newpage.json', 'r') as data:
         components = json.loads(data.read())['components']
     return render_template('main.html', 
+    title="",
     project_name="Sample",
     main_heading="",
     content="",
@@ -36,6 +39,7 @@ def newpage():
     heading_classes="",
     content_classes="",
     subhead_classes="",
+    button_classes="",
     components=components
     )
 
