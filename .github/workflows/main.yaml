@@ -28,3 +28,8 @@ jobs:
 
       - name: Run Python script
         run: python tools/generate_website.py
+
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Generated website files
+          commit_options: '--no-verify --signoff'
