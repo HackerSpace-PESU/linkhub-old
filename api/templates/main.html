@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{{ title }} - {{ project_name }}</title>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
+            referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="static/styles.css">
+        
+        {% for s in stylesheets %}
+            {{ s }}
+        {% endfor %}
+    </head>
+
+
+    <body class="{{ body_classes }} py-20 px-5 lg:px-20 lg:py-30 content-center text-center items-center">
+        <h1 class="{{ heading_classes }} text-4xl sm:text-5xl md:text-7xl lg:text-8xl">{{ main_heading }}</h1><br>
+        <span class="{{ content_classes }} text-xl md:text-2xl lg:text-3xl">{{ content }}</span>
+        <div class="space-y-4">
+            {% for cmp in components %}
+                {% if cmp.type == 'button' %}
+                    <button 
+                    class="{{ button_classes }} w-full md:w-3/4 lg:w-1/2 px-10 py-3 text-2xl lg:text-2xl text-center content-center"
+                    onclick="window.open('{{ cmp.properties.link }}', '_blank')">
+                        {{ cmp.label }}
+                    </button><br>
+                {% elif cmp.type == 'heading' %}
+                    <br><br>
+                    <h2 class="{{ subhead_classes }} text-2xl md:text-3xl lg:text-4xl">{{ cmp.label }}</h2>
+                {% endif %}
+            {% endfor %}
+        </div>
+        
+    </body>
+
+</html>
