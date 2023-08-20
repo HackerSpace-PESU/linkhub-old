@@ -27,4 +27,4 @@ jobs:
           pip install gitpython
 
       - name: Run Python script
-        run: python path/to/your/script.py
+        run: python tools/update_website.py
