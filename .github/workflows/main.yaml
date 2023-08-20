@@ -1,33 +1,30 @@
-name: Commit Files to Website Branch
+name: Update Website
 
 on:
-    push:
-        branches:
-        - main
+  push:
+    branches:
+      - main
 
 jobs:
-    commit:
-        runs-on: ubuntu-latest
+  update-website:
+    runs-on: ubuntu-latest
 
-        permissions:
-            contents: write
-
-        steps:
-            - uses: actions/checkout@v3
-        
-            - name: Set up Python 3.10
-              uses: actions/setup-python@v3
-              with:
-                  python-version: "3.10"
-
-            - name: Generate index.py and styles.css
-              run: python tools/generate_website.py
+    permissions:
+      contents: write
             
-            - name: Commit and push changes
-              run: |
-                git config --global user.name 'SilicoFlare [action]'
-                git config --global user.email 'silicoflare@gmail.com'
-                git checkout -b website
-                git add .
-                git commit -m 'Adding new files'
-                git push origin website
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.x
+
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install gitpython
+
+      - name: Run Python script
+        run: python path/to/your/script.py
