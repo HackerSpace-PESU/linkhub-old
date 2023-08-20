@@ -27,4 +27,4 @@ jobs:
           pip install gitpython
 
       - name: Run Python script
-        run: python tools/update_website.py
+        run: python tools/generate_website.py
