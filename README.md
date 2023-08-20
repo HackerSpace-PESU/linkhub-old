@@ -13,9 +13,9 @@ Tired of hopping across several link management sites to realize none of them ma
 ## Instructions for use
 * Create a new repository using this as a template using the `Use this template` button above. Name it whatever you want.
 * There are many files in this repository, but we are concerned with only these particular files/folders:
-    * api/static/data/main.json
-    * api/static/data/index.json
-    * api/static/styles.css
+    * data/main.json
+    * data/index.json
+    * data/styles.css
 
 ### The main.json file
 The main.json file is where all the main data about your site goes. It has two parts, the metadata and the pages.
