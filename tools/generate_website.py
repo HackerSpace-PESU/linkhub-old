@@ -60,13 +60,3 @@ with open('api/index.py', 'w') as finale:
 
 with open('api/static/styles.css', 'w') as fin:
     fin.write(styles)
-
-# Commit and push changes
-repo.git.add(all=True)
-repo.git.commit('-m', 'Generated website files')
-repo.git.push('origin', 'website')
-
-# Switch back to the 'main' branch
-repo.git.checkout('main')
-
-print("Data processing and updating complete!")
