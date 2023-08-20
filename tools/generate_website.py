@@ -1,4 +1,6 @@
 import json
+import git
+import os
 
 main_code = '''from flask import Flask, render_template, url_for, redirect
 import json
@@ -49,14 +51,28 @@ def {cmp['properties'].get('endpoint')[1:].replace('/', '_')}():
 
 '''
 
+styles = ''
+with open('data/styles.css', 'r') as st:
+    styles = st.read()                    
 
 
+# Switch to the 'website' branch
+repo = git.Repo(os.getcwd())
+repo.git.checkout('website')
+
+# Write processed data to index.py
 with open('api/index.py', 'w') as finale:
     finale.write(main_code)
-
-with open('data/styles.css', 'r') as st:
-    styles = st.read()
 
 with open('api/static/styles.css', 'w') as fin:
     st.write(styles)
 
+# Commit and push changes
+repo.git.add(all=True)
+repo.git.commit('-m', 'Generated website files')
+repo.git.push('origin', 'website')
+
+# Switch back to the 'main' branch
+repo.git.checkout('main')
+
+print("Data processing and updating complete!")
