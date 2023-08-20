@@ -20,6 +20,7 @@ def {page["endpoint"][1:].replace('/', '_') if page["endpoint"] != '/' else 'ind
     with open('data/{page["file"]}', 'r') as data:
         components = json.loads(data.read())['components']
     return render_template('main.html', 
+    title="{page['title']}",
     project_name="{meta['project_name']}",
     main_heading="{meta['page_content']['main_heading']}",
     content="{meta['page_content']['content']}",
@@ -28,6 +29,7 @@ def {page["endpoint"][1:].replace('/', '_') if page["endpoint"] != '/' else 'ind
     heading_classes="{meta['page_content']['styles']['heading_classes']}",
     content_classes="{meta['page_content']['styles']['content_classes']}",
     subhead_classes="{meta['page_content']['styles']['subhead_classes']}",
+    button_classes="{meta['page_content']['styles']['button_classes']}",
     components=components
     )
 

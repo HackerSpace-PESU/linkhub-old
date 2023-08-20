@@ -11,7 +11,7 @@
         <link rel="stylesheet" href="static/styles.css">
         
         {% for s in stylesheets %}
-            {{ s }}
+            {{ s | safe }}
         {% endfor %}
     </head>
 
