@@ -1,6 +1,9 @@
 # LinkHub
 Tired of hopping across several link management sites to realize none of them match your taste? Or is the free version hindering your creativity? Presenting LinkHub, a link manager-shortener template to create your own standalone link management site, with added customized shortened links!
 
+![image](https://github.com/SilicoFlare/linkhub/assets/100959814/12694de6-51ab-444e-abc6-c87a1bec3832)
+
+
 ## Specs
 * Frontend: Tailwind CSS
 * Backend: Flask
@@ -126,12 +129,8 @@ There is no error checking added yet, so ensure the following:
 
 
 ---
-
-## Gallery
-![image](https://github.com/SilicoFlare/linkhub/assets/100959814/12694de6-51ab-444e-abc6-c87a1bec3832)
-
 ---
 
 ## Credits
 Created by [SilicoFlare](https://github.com/SilicoFlare)<br>
-Check out [LinkHub](https://github.com/SilicoFlare/linkhub) to create your own link manager-shortener.
+Check out [LinkHub](https://github.com/HackerSpace-PESU/linkhub) to create your own link manager-shortener.
