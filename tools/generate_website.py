@@ -1,6 +1,4 @@
 import json
-import git
-import os
 
 main_code = '''from flask import Flask, render_template, url_for, redirect
 import json
@@ -17,7 +15,7 @@ with open('data/main.json', 'r') as mainfile:
     meta = json.loads(mainfile.read())
 
     for page in meta['pages']:
-        main_code += f'''@app.route('{page["endpoint"]}')
+        main_code += f'''@app.route(\'{page["endpoint"]}\')
 def {page["endpoint"][1:].replace('/', '_') if page["endpoint"] != '/' else 'index'}():
     with open('data/{page["file"]}', 'r') as data:
         components = json.loads(data.read())['components']
@@ -45,9 +43,9 @@ with open('data/main.json', 'r') as meta:
             for cmp in components:
                 if cmp['type'] == 'button':
                     if cmp['properties'].get('endpoint') != None:
-                        main_code += f'''@app.route('{cmp['properties'].get('endpoint')}')
+                        main_code += f'''@app.route(\'{cmp['properties'].get('endpoint')}\')
 def {cmp['properties'].get('endpoint')[1:].replace('/', '_')}():
-    return redirect('{cmp['properties'].get('link')}')
+    return redirect(\'{cmp['properties'].get('link')}\')
 
 '''
 
@@ -55,13 +53,6 @@ styles = ''
 with open('data/styles.css', 'r') as st:
     styles = st.read()                    
 
-
-# Switch to the 'website' branch
-repo = git.Repo(os.getcwd())
-
-if 'website' not in [branch.name for branch in repo.branches]:
-    repo.git.checkout(b='website')
-repo.git.checkout('website')
 
 # Write processed data to index.py
 with open('api/index.py', 'w') as finale:
