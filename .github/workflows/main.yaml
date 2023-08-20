@@ -21,7 +21,7 @@ jobs:
                   python-version: "3.10"
 
             - name: Generate index.py and styles.css
-              run: python tools/generate_files.py
+              run: python tools/generate_website.py
             
             - name: Commit and push changes
               run: |
