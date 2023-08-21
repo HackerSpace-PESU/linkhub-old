@@ -1,0 +1,23 @@
+name: Create Linkhub Site
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  run-scripts:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Run linkhub-read
+        uses: silicoflare/linkhub-read@master
+
+      - name: Switch to website branch
+        run: git checkout website
+
+      - name: Run linkhub-write
+        uses: silicoflare/linkhub-write@master
