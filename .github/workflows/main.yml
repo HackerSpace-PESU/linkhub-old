@@ -3,7 +3,7 @@ name: Create Linkhub Site
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   run-scripts:
