@@ -15,9 +15,3 @@ jobs:
 
       - name: Run linkhub-read
         uses: silicoflare/linkhub-read@master
-
-      - name: Switch to website branch
-        run: git checkout website
-
-      - name: Run linkhub-write
-        uses: silicoflare/linkhub-write@master
