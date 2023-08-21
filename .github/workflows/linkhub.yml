@@ -6,12 +6,12 @@ on:
       - main
 
 jobs:
-  run-scripts:
+  run-script:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Run linkhub-read
+      - name: Generate Linkhub site
         uses: silicoflare/linkhub-action@v1
